@@ -1,0 +1,724 @@
+body {
+    background-image: url('your-background-image.jpg'); /* Replace with your background image file name */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white; 
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8); 
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif; 
+    color: #FFD700; 
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px; 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#currentWallpaper {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; 
+    max-width: 700px; 
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #ccc;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top: 1px solid #444;
+}
+
+.instagram-link {
+    color: #E1306C; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.instagram-icon {
+    width: 15px; 
+    height: 15px; 
+    vertical-align: middle; 
+    margin-right: 5px; 
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px; 
+    }
+
+    button {
+        width: 90%; 
+        font-size: 14px; 
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background for contrast */
+}
+
+header {
+    background-color: #333; /* Dark background for header */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+nav button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #444; /* Dark button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background-color: #555; /* Button hover effect */
+}
+
+main {
+    width: 80%; /* Limit the width of the main section */
+    max-width: 1200px; /* Maximum width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wallpaper-category {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.wallpaper-category img {
+    margin: 10px;
+    width: calc(33% - 20px); /* Three images per row with spacing */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: transform 0.2s; /* Smooth scaling */
+}
+
+.wallpaper-category img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Sta
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background for contrast */
+}
+
+header {
+    background-color: #333; /* Dark background for header */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+nav button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #444; /* Dark button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background-color: #555; /* Button hover effect */
+}
+
+main {
+    width: 80%; /* Limit the width of the main section */
+    max-width: 1200px; /* Maximum width for larger screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wallpaper-category {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    align-items: center; /* Center images */
+    margin: 20px 0;
+}
+
+.wallpaper-category img {
+    margin: 10px;
+    width: 90%; /* Increase width for normal size */
+    max-width: 600px; /* Limit maximum width */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    border-radius: 8px; /* Slightly rounded corners */
+    transition: transform 0.2s; /* Smooth scaling */
+}
+
+.wallpaper-category img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Width of the modal image */
+    max-width: 700px; /* Maximum width */
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333; /* Dark background for footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.instagram-icon {
+    width: 20px; /* Size of the Instagram icon */
+    vertical-align: middle; /* Align with text */
+    margin: 0 5px; /* Space around the icon */
+}
+
+footer p {
+    margin: 5px 0; /* Margin for paragraphs in footer */
+}
+
+.instagram-icon {
+    width: 30px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align with text */
+    margin: 0 5px; /* Space around the icon */
+}
+
+.header-quote {
+    font-style: italic;
+    color: #fff; /* White text for contrast */
+    margin: 10px 0;
+    font-size: 18px; /* Slightly larger font size */
+}
+
+.header-quote {
+    font-style: italic;
+    color: #fff; /* White text for contrast */
+    margin: 10px 0;
+    font-size: 18px; /* Slightly larger font size */
+}
+
+header h1 {
+    font-family: 'Rye', cursive; /* Use Rye font */
+    font-size: 2.5em; /* Adjust size as needed */
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-family: 'Rye', cursive; /* Use Rye font */
+    font-size: 2em; /* Adjust size as needed */
+    margin: 1em 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Example body font */
+    background-color: #f5f5f5; /* Optional background color */
+    color: #333; /* Text color */
+}
+
+.quote {
+    font-family: 'Calistoga', cursive;
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.quote {
+    font-family: 'Calistoga', cursive;
+    font-size: 24px; /* Adjust the size as needed */
+    text-align: center; /* Center the text */
+    margin: 20px 0; /* Add some space above and below */
+}
+
+.quote {
+    font-family: 'Calistoga', cursive;
+    font-size: 24px; /* Adjust as needed */
+    text-align: center;
+    margin: 10px 0; /* Adjust margin if needed */
+}
+
+nav button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block for side-by-side */
+    font-size: 16px; /* Font size */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+nav button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+nav button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block for side-by-side */
+    font-size: 16px; /* Font size */
+    font-family: 'Eczar', serif; /* Set font to Eczar */
+    margin: 5px; /* Margin around buttons */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+nav button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.wallpaper {
+    display: inline-block;
+    margin: 10px;
+}
+
+.wallpaper img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Responsive */
+    max-width: 700px; /* Max width */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.caption {
+    margin: 24px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.download-container {
+    text-align: center;
+    margin: 20px 0; /* Space around the download button */
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Inline block */
+    font-size: 16px; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.warning-message {
+    color: red; /* Red text color */
+    font-size: 16px; /* Adjust size as needed */
+    margin: 10px 0; /* Space above and below */
+    text-align: center; /* Center the text */
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.floating {
+    position: absolute;
+    border-radius: 50%;
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    background-color: rgba(255, 255, 255, 0.2); /* Light background */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Randomly position floating elements */
+.floating:nth-child(1) { top: 10%; left: 20%; }
+.floating:nth-child(2) { top: 30%; left: 50%; }
+.floating:nth-child(3) { top: 50%; left: 30%; }
+.floating:nth-child(4) { top: 70%; left: 70%; }
+.floating:nth-child(5) { top: 20%; left: 80%; }
+
+.download-button {
+    display: inline-block;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Space above */
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.header-quote {
+    font-family: 'Desktop', sans-serif; /* Apply the Desktop font */
+}
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicks through the images */
+}
+
+.floating {
+    width: 50px; /* Adjust size as needed */
+    opacity: 0.7; /* Make them semi-transparent */
+    animation: float 6s ease-in-out infinite; /* Animation for floating effect */
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Add more animations or styles as needed */
+
+.modal-content {
+    -webkit-touch-callout: none; /* Prevent callout on touch devices */
+}
+
+.download-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    text-decoration: none; /* No underline */
+}
+
+.download-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.download-container {
+    position: relative; /* Ensure positioning is relative */
+    z-index: 10; /* Bring it to the front */
+    background-color: red; /* Red background for the box */
+    padding: 15px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px 0; /* Space around the box */
+}
+
+.download-container p {
+    font-size: 24px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    color: yellow; /* Yellow text color */
+    margin: 0; /* Remove margin */
+}
+
+.download-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding */
+    border: none; /* No border */
+    bor
+
+.download-button {
+    background-color: red; /* Red background */
+    color: yellow; /* Yellow text */
+    padding: 10px 15px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+}
+
+header h1 {
+    font-family: 'McLaren', cursive; /* Change to Fatface font */
+}
+
+.footer-text {
+    font-family: 'McLaren', sans-serif; /* Replace with the desired font */
+    font-size: 16px; /* Adjust size as needed */
+    color: #000; /* Change color if necessary */
+    text-align: center; /* Center it if desired */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    header, footer {
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+body {
+    font-family: 'Rye', cursive;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffcc00;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.rating {
+    display: flex;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 24px; /* Adjust the size as needed */
+    color: lightgray; /* Default color */
+    transition: color 0.3s;
+}
+
+.filled {
+    color: #ffd700; /* Gold color for filled stars */
+}
+textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 5px 10px;
+}

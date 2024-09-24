@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Desktop&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WonderfulWalls</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+
+        <h1>Wonderful Walls</h1>
+        <p>Brought to you by Mudassir Pathan</p>
+        
+        <p class="header-quote">"Life is too short for boring walls!"</p>
+        <nav>
+            <button onclick="showCategory('dark')">Dark Wallpapers</button>
+            <button onclick="showCategory('light')">Light Wallpapers</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dark" class="wallpaper-category">
+            <h2>Dark Wallpapers</h2>
+            <img src="dark-wallpaper1.jpg" alt="Dark Wallpaper 1" onclick="openModal(this.src)">
+            <img src="dark-wallpaper2.jpg" alt="Dark Wallpaper 2" onclick="openModal(this.src)">
+            <img src="dark-wallpaper3.jpg" alt="Dark Wallpaper 3" onclick="openModal(this.src)">
+            <img src="dark-wallpaper4.jpg" alt="Dark Wallpaper 4" onclick="openModal(this.src)">
+            <img src="dark-wallpaper5.jpg" alt="Dark Wallpaper 5" onclick="openModal(this.src)">
+            <img src="dark-wallpaper6.jpg" alt="Dark Wallpaper 6" onclick="openModal(this.src)">
+        </section>
+
+        <section id="light" class="wallpaper-category" style="display: none;">
+            <h2>Light Wallpapers</h2>
+            <img src="light-wallpaper1.jpg" alt="Light Wallpaper 1" onclick="openModal(this.src)">
+            <img src="light-wallpaper2.jpg" alt="Light Wallpaper 2" onclick="openModal(this.src)">
+            <img src="light-wallpaper3.jpg" alt="Light Wallpaper 3" onclick="openModal(this.src)">
+            <img src="light-wallpaper4.jpg" alt="Light Wallpaper 4" onclick="openModal(this.src)">
+            <img src="light-wallpaper5.jpg" alt="Light Wallpaper 5" onclick="openModal(this.src)">
+            <img src="light-wallpaper6.jpg" alt="Light Wallpaper 6" onclick="openModal(this.src)">
+            <img src="light-wallpaper7.jpg" alt="Light Wallpaper 7" onclick="openModal(this.src)">
+        </section>
+    </main>
+
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" style="max-width: 90%; max-height: 90%;">
+        <div class="download-container">
+            <p style="color: yellow;">Download for ₹1</p>
+            <a href="upi://pay?pa=8010688614@fam&pn=WonderfulWalls&mc=1234&tid=1234567890&am=1&tid=1234&url=https://yourwebsite.com" class="download-button">Pay Now</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wonderful Walls. All rights reserved.</p>
+        <p>
+            Follow us on 
+            <a href="https://www.instagram.com/_mudassir__45_" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram" class="instagram-icon">
+            </a>
+            Instagram
+        </p>
+    </footer>
+</body>
+</html>
+
+<nav>
+    <ul>
+        <li><a href="#dark">Dark Wallpapers</a></li>
+        <li><a href="#light">Light Wallpapers</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="mudassir.r.pathan009@gmail.com">
+    <h2>About Us</h2>
+    <p>Welcome to Wonderful Walls, where you can find stunning wallpapers to brighten your space.</p>
+</section>
+
+<section id="mudassir.r.pathan009@gmail.c">
+    <h2>Contact Us</h2>
+    <form action="submit_form.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>Follow us on:</p>
+    <a href="https://www.instagram.com/_mudassir__45_" target="_blank">Instagram</a>
+</footer>
+
+<meta name="description" content="Wonderful Walls - Stunning wallpapers for your space.">
+<meta name="keywords" content="wallpapers, dark wallpapers, light wallpapers, home decor">
+
+<div id="loader" class="loader" style="display: none;"></div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<div class="rating">
+    <span class="star" onclick="rate(1)">&#9733;</span>
+    <span class="star" onclick="rate(2)">&#9733;</span>
+    <span class="star" onclick="rate(3)">&#9733;</span>
+    <span class="star" onclick="rate(4)">&#9733;</span>
+    <span class="star" onclick="rate(5)">&#9733;</span>
+    <p id="rating-message"></p>
+</div>
+<div id="feedback-section" style="display: none;">
+    <textarea id="feedback" placeholder="Your feedback..." rows="4" cols="50"></textarea>
+    <button onclick="submitFeedback()">Submit Feedback</button>
+    <p id="thank-you-message" style="display: none;"></p>
+</div>
+
